@@ -54,8 +54,8 @@ ATTR_MANUFACTURER = "Zehnder"
 
 
 # ------------------------------------------------------------
-# 1) Error-Konstanten (C_<NAME> = "<error_num>")
-#    >> Diese Konstanten dienen als Keys im ERROR_DICT.
+# 1) Error constants (C_<NAME> = "<error_num>")
+#    >> These constants serve as keys in the ERROR_DICT.
 # ------------------------------------------------------------
 C_NO_ERR = 0
 C_HRU_T_FIRE_ERR = 21
@@ -123,81 +123,81 @@ C_CO2_SENS_COUNT_ERR = 102
 C_CO2_SENS_TOO_MANY_ERR = 103
 C_CO2_SENS_GENERAL_ERR = 104
 
-# Dictionary mit Beschreibungen
+# Dictionary with descriptions
 ERROR_DICT: Dict[str, Any] = {
-    C_NO_ERR: "Normalbetrieb",
-    C_HRU_T_FIRE_ERR: "Zwei oder mehr Temperatursensoren sind außerhalb der Grenzen",
-    C_T_HRU_ERR: "Temperatur zu hoch für HRU",
-    C_T_11_ERR: "Wert des Temperatursensors T11 hat den Grenzwert zu oft überschritten",
-    C_T_11_LIMIT_ERR: "Wert des Temperatursensors T11 überschreitet den Grenzwert",
-    C_T_12_ERR: "Wert des Temperatursensors T12 hat den Grenzwert zu oft überschritten",
-    C_T_12_LIMIT_ERR: "Wert des Temperatursensors T12 überschreitet den Grenzwert",
-    C_T_20_ERR: "Wert des Temperatursensors T20 hat den Grenzwert zu oft überschritten",
-    C_T_20_LIMIT_ERR: "Wert des Temperatursensors T20 überschreitet den Grenzwert",
-    C_T_21_ERR: "Wert des Temperatursensors T21 hat den Grenzwert zu oft überschritten",
-    C_T_21_LIMIT_ERR: "Wert des Temperatursensors T21 überschreitet den Grenzwert",
-    C_T_22_ERR: "Wert des Temperatursensors T22 hat den Grenzwert zu oft überschritten",
-    C_T_22_LIMIT_ERR: "Wert des Temperatursensors T22 überschreitet den Grenzwert",
-    C_HRU_INIT_ERR: "HRU ist nicht initialisiert worden",
-    C_HRU_FRONT_OPEN_ERR: "Die Vordertür ist offen",
-    C_H_21_RELEASE_ERR: "Vorwärmer ist vorhanden, aber seine Position (links/rechts) stimmt nicht mit der Ausrichtung von HRU überein",
-    C_H_21_P_ERR: "Vorwärmer liefert nicht die gewünschte Leistung",
-    C_H_21_P_RATIO_ERR: "Vorwärmer liefert nicht die gewünschte Leistung im erforderlichen Verhältnis",
-    C_PHI_11_ERR: "Wert des Feuchtigkeitssensors ϕ11 hat den Grenzwert zu oft überschritten",
-    C_PHI_12_ERR: "Wert des Feuchtigkeitssensors ϕ12 hat den Grenzwert zu oft überschritten",
-    C_PHI_20_ERR: "Wert des Feuchtigkeitssensors ϕ20 hat den Grenzwert zu oft überschritten",
-    C_PHI_21_ERR: "Wert des Feuchtigkeitssensors ϕ21 hat den Grenzwert zu oft überschritten",
-    C_PHI_22_ERR: "Wert des Feuchtigkeitssensors ϕ22 hat den Grenzwert zu oft überschritten",
-    C_P_12_ERR: "Wert des Drucksensors P12 hat den Grenzwert zu oft überschritten",
-    C_P_22_ERR: "Wert des Drucksensors P22 hat den Grenzwert zu oft überschritten",
-    C_F_12_S_ERR: "Drehzahl des F12-Lüfters hat den Grenzwert zu oft überschritten",
-    C_F_22_S_ERR: "Drehzahl des F22-Lüfters hat den Grenzwert zu oft überschritten",
-    C_PTOT_12_S_ERR: "Statischer Druck des Sensors P12 hat den Grenzwert zu oft überschritten",
-    C_PTOT_22_S_ERR: "Statischer Druck des Sensors P22 hat den Grenzwert zu oft überschritten",
-    C_F_12_S_SET_ERR: "Erforderliche F12-Lüfterdrehzahl wurde zu oft nicht erreicht",
-    C_F_22_S_SET_ERR: "Erforderliche F22-Lüfterdrehzahl wurde zu oft nicht erreicht",
-    C_QM_12_SET_ERR: "Erforderlicher Massenstrom für F12-Lüfter wurde zu oft nicht erreicht",
-    C_QM_22_SET_ERR: "Erforderlicher Massenstrom für F22-Lüfter wurde zu oft nicht erreicht",
-    C_T_21_SET_ERR: "Erforderliche Temperatur für die Außenluft nach dem Vorwärmer wurde zu oft nicht erreicht",
-    C_T_22_SET_ERR: "Erforderliche Temperatur für die Zuluft wurde zu oft nicht erreicht",
-    C_T_22_FROST_ERR: "Zulufttemperatur (Sensor T22) ist zu oft zu niedrig",
-    C_UNBALANCE_ERR: "Unwucht lag im vergangenen Zeitraum zu oft außerhalb der Toleranzwerte",
-    C_PRESENT_RF_ERR: "RF-Kommunikationshardware war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_IO_ERR: "Optionskarte war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_H_21_ERR: "Vorwärmer war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_H_23_ERR: "Nacherhitzer war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_HOOD_ERR: "Abzugshaube war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_CCOOL_ERR: "Comfo Cool war vorhanden, wird aber nicht mehr erkannt",
-    C_PRESENT_G_ERR: "ComfoFond war vorhanden, wird aber nicht mehr erkannt",
-    C_FILTER_ALARM_FLAG: "Filter müssen jetzt ausgetauscht werden",
-    C_FILTER_EXT_ERR: "Der Eingang des externen Filters ist hoch",
-    C_FILTER_WARNING_FLAG: "Die Filter müssen jetzt bestellt werden, da die verbleibende Lebensdauer der Filter begrenzt ist",
-    C_STANDBY_ERR: "Standby ist aktiv",
-    C_H_21_COMM_ERR: "Vorwärmer kommuniziert nicht zuverlässig",
-    C_T_22_MANUAL_ERR: "Bypass wird manuell verwendet.",
-    C_CC_OVERHEAT_ERR: "ComfoCool ist überhitzt",
-    C_CC_COMP_ERR: "ComfoCool Kompressorfehler",
-    C_CC_T_10_ERR: "ComfoCool Raumtemperatur außerhalb der Grenzen",
-    C_CC_T_13_ERR: "ComfoCool Kompressortemperatur außerhalb der Grenzen",
-    C_CC_T_23_ERR: "ComfoCool Vorlauftemperatur außerhalb der Grenzen",
-    C_T_HOOD_ERR: "Haubentemperatur ist zu hoch",
-    C_IO_HOOD_DUTY_ERR: "Haube ist aktiviert",
+    C_NO_ERR: "Normal operation",
+    C_HRU_T_FIRE_ERR: "Two or more temperature sensors are out of bounds",
+    C_T_HRU_ERR: "Temperature too high for HRU",
+    C_T_11_ERR: "Value of temperature sensor T11 has exceeded the limit too often",
+    C_T_11_LIMIT_ERR: "Value of temperature sensor T11 is exceeding the limit",
+    C_T_12_ERR: "Value of temperature sensor T12 has exceeded the limit too often",
+    C_T_12_LIMIT_ERR: "Value of temperature sensor T12 is exceeding the limit",
+    C_T_20_ERR: "Value of temperature sensor T20 has exceeded the limit too often",
+    C_T_20_LIMIT_ERR: "Value of temperature sensor T20 is exceeding the limit",
+    C_T_21_ERR: "Value of temperature sensor T21 has exceeded the limit too often",
+    C_T_21_LIMIT_ERR: "Value of temperature sensor T21 is exceeding the limit",
+    C_T_22_ERR: "Value of temperature sensor T22 has exceeded the limit too often",
+    C_T_22_LIMIT_ERR: "Value of temperature sensor T22 is exceeding the limit",
+    C_HRU_INIT_ERR: "HRU has not been initialized",
+    C_HRU_FRONT_OPEN_ERR: "The front door is open",
+    C_H_21_RELEASE_ERR: "Preheater is present, but its position (left/right) does not match the HRU orientation",
+    C_H_21_P_ERR: "Preheater is not delivering the required power",
+    C_H_21_P_RATIO_ERR: "Preheater is not delivering the required power in the required ratio",
+    C_PHI_11_ERR: "Value of humidity sensor ϕ11 has exceeded the limit too often",
+    C_PHI_12_ERR: "Value of humidity sensor ϕ12 has exceeded the limit too often",
+    C_PHI_20_ERR: "Value of humidity sensor ϕ20 has exceeded the limit too often",
+    C_PHI_21_ERR: "Value of humidity sensor ϕ21 has exceeded the limit too often",
+    C_PHI_22_ERR: "Value of humidity sensor ϕ22 has exceeded the limit too often",
+    C_P_12_ERR: "Value of pressure sensor P12 has exceeded the limit too often",
+    C_P_22_ERR: "Value of pressure sensor P22 has exceeded the limit too often",
+    C_F_12_S_ERR: "Speed of F12 fan has exceeded the limit too often",
+    C_F_22_S_ERR: "Speed of F22 fan has exceeded the limit too often",
+    C_PTOT_12_S_ERR: "Static pressure of sensor P12 has exceeded the limit too often",
+    C_PTOT_22_S_ERR: "Static pressure of sensor P22 has exceeded the limit too often",
+    C_F_12_S_SET_ERR: "Required F12 fan speed was not reached too often",
+    C_F_22_S_SET_ERR: "Required F22 fan speed was not reached too often",
+    C_QM_12_SET_ERR: "Required mass flow for F12 fan was not reached too often",
+    C_QM_22_SET_ERR: "Required mass flow for F22 fan was not reached too often",
+    C_T_21_SET_ERR: "Required temperature for the outdoor air after the preheater was not reached too often",
+    C_T_22_SET_ERR: "Required temperature for the supply air was not reached too often",
+    C_T_22_FROST_ERR: "Supply air temperature (sensor T22) is too low too often",
+    C_UNBALANCE_ERR: "Imbalance was outside the tolerance values too often in the past period",
+    C_PRESENT_RF_ERR: "RF communication hardware was present but is no longer detected",
+    C_PRESENT_IO_ERR: "Option board was present but is no longer detected",
+    C_PRESENT_H_21_ERR: "Preheater was present but is no longer detected",
+    C_PRESENT_H_23_ERR: "Reheater was present but is no longer detected",
+    C_PRESENT_HOOD_ERR: "Extractor hood was present but is no longer detected",
+    C_PRESENT_CCOOL_ERR: "Comfo Cool was present but is no longer detected",
+    C_PRESENT_G_ERR: "ComfoFond was present but is no longer detected",
+    C_FILTER_ALARM_FLAG: "Filters must be replaced now",
+    C_FILTER_EXT_ERR: "The external filter input is high",
+    C_FILTER_WARNING_FLAG: "The filters must be ordered now as the remaining filter life is limited",
+    C_STANDBY_ERR: "Standby is active",
+    C_H_21_COMM_ERR: "Preheater is not communicating reliably",
+    C_T_22_MANUAL_ERR: "Bypass is being used manually.",
+    C_CC_OVERHEAT_ERR: "ComfoCool is overheated",
+    C_CC_COMP_ERR: "ComfoCool compressor error",
+    C_CC_T_10_ERR: "ComfoCool room temperature out of bounds",
+    C_CC_T_13_ERR: "ComfoCool compressor temperature out of bounds",
+    C_CC_T_23_ERR: "ComfoCool supply temperature out of bounds",
+    C_T_HOOD_ERR: "Hood temperature is too high",
+    C_IO_HOOD_DUTY_ERR: "Hood is activated",
     C_QM_CONSTRAINT_MIN_ERR: "STATUS-FLAG",
-    C_H_21_QM_MIN_ERR: "Strom zu niedrig für Vorwärmer",
-    C_CONFIG_ERR: "Konfigurationsfehler",
-    C_ANALYSIS_BUSY_WARNING: "Warnung, dass eine Fehleranalyse ausgeführt wird",
-    C_COMFONET_ERR: "Fehler auf dem ComfoNet-Bus",
-    C_CO2_SENS_COUNT_ERR: "Die Anzahl der CO2-Sensoren an einem Controller hat sich verringert - ein oder mehrere Sensoren werden nicht mehr erkannt",
-    C_CO2_SENS_TOO_MANY_ERR: "Mehr als 8 Sensoren werden in einer Zone erkannt",
-    C_CO2_SENS_GENERAL_ERR: "Allgemeiner CO2-Sensor-Fehler",
+    C_H_21_QM_MIN_ERR: "Current too low for preheater",
+    C_CONFIG_ERR: "Configuration error",
+    C_ANALYSIS_BUSY_WARNING: "Warning that an error analysis is running",
+    C_COMFONET_ERR: "Error on the ComfoNet bus",
+    C_CO2_SENS_COUNT_ERR: "The number of CO2 sensors on a controller has decreased - one or more sensors are no longer detected",
+    C_CO2_SENS_TOO_MANY_ERR: "More than 8 sensors are detected in one zone",
+    C_CO2_SENS_GENERAL_ERR: "General CO2 sensor error",
 }
 
-# --- Konstanten ---
+# --- Constants ---
 
-# Datentyp für coils oder discrete_inputs
+# Data type for coils or discrete_inputs
 C_DT_BITS = ModbusTcpClient.DATATYPE.BITS  # "bit"     # 1 Bit
 
-# Datentypen für input_registers or holding_registers
+# Data types for input_registers or holding_registers
 C_DT_INT16 = ModbusTcpClient.DATATYPE.INT16  # "INT16"     # 1 Register
 C_DT_UINT16 = ModbusTcpClient.DATATYPE.UINT16  # "UINT16"   # 1 Register
 C_DT_INT32 = ModbusTcpClient.DATATYPE.INT32  # "INT32"   # 2 Register
@@ -212,7 +212,7 @@ C_MAX_COILS = -1
 C_MIN_DISCRETE_INPUTS = sys.maxsize
 C_MAX_DISCRETE_INPUTS = -1
 
-# Konstanten zur Definition der Registerart
+# Constants for defining the register type
 C_REG_TYPE_UNKNOWN = 0
 C_REG_TYPE_COILS = 1
 C_REG_TYPE_DISCRETE_INPUTS = 2
@@ -220,8 +220,8 @@ C_REG_TYPE_HOLDING_REGISTERS = 3
 C_REG_TYPE_INPUT_REGISTERS = 4
 
 # ------------------------------------------------------------
-# 2) Entity-Konstanten (C_<NAME> = "<entity_key>")
-#    >> Diese Konstanten dienen als Keys im ENTITIES_DICT.
+# 2) Entity constants (C_<NAME> = "<entity_key>")
+#    >> These constants serve as keys in the ENTITIES_DICT.
 # ------------------------------------------------------------
 C_CONNECTION_STATE = "connection_state"
 C_ACTIVEERROR1 = "activeerror1"
@@ -273,33 +273,33 @@ C_COMFOCOOL = "comfocool"
 
 
 # --------------------------------------------------------------------------------------------
-# 2) ENTITIES_DICT DICT, neue Register müssen nur hier zugefügt werden.
-#    Sofern zusätzliche Register keine neue Logik erfordern, ist der restliche Code schon darauf vorbereitet
+# 2) ENTITIES_DICT DICT, new registers only need to be added here.
+#    If additional registers do not require new logic, the rest of the code is already prepared for it
 # --------------------------------------------------------------------------------------------
 #    ENTITIES_DICT: Dict[str, Dict[str, Any]]
-#    *Key = passende C_<...>-Konstante = HASS sensor_id
-#    *NAME: Angezeigter Name
-#    *REG: Modbus-Register (Zero-Based)
-#    *RT: Register Typ (derzeit 1..4): Holding-Register, Coils (read-write) oder Input-Register, Discrete-Inputs (read-only)
-#    *DT: Datentyp (derzeit nur BITS, INT16, UINT16), Hinweis: BITS für Coils und Discrete-Inputs (Angabe optional). Schalter immer mit 0 oder 1
-#    RW: Read/Write für Coils und Holding-Register unterbinden mit "RW":0
-#    FAKTOR: Multiplikator für Anzeige im HA (derzeit: 1, 0.1)
-#    UNIT: Einheit der Entität (°C, W, kW, Wh, kWh, bar, ppm, m³/h...)
-#    STEP: Steuert die Darstellung in der Anzeige im HA, Schrittweite der Einstellung (z.B. 5.0, 1.0, 0.5, 0.1)
-#    MIN: Erlaubter Mindestwert der Entität
-#    MAX: Erlaubter Höchstwert der Entität
-#    VALUES: Gültige Auswahlwerte; dict[id,AngezeigterName] mit optionalem Bestandteil: "default":<defaultwert>
-#    INC: 1, wenn Entität stetig steigende Werte liefert.
-#    SWITCH: Werte für "aus" und optional für "ein". Wenn "ein" nicht angegeben ist, sind alle anderen ganzahligen Werte "ein" gültig
-#    PF: Anzeige-Variante in HA übersteuern. "PF":Platform.NUMBER v=> Temperaturwert wird nicht als CLIMATE, sondern als NUMBER behandelt.
+#    *Key = matching C_<...>-constant = HASS sensor_id
+#    *NAME: Displayed name
+#    *REG: Modbus register (Zero-Based)
+#    *RT: Register Type (currently 1..4): Holding-Register, Coils (read-write) or Input-Register, Discrete-Inputs (read-only)
+#    *DT: Data type (currently only BITS, INT16, UINT16), Note: BITS for Coils and Discrete-Inputs (optional). Switches always with 0 or 1
+#    RW: Prevent Read/Write for Coils and Holding-Registers with "RW":0
+#    FAKTOR: Multiplier for display in HA (currently: 1, 0.1)
+#    UNIT: Unit of the entity (°C, W, kW, Wh, kWh, bar, ppm, m³/h...)
+#    STEP: Controls the display in HA, step size of the setting (e.g. 5.0, 1.0, 0.5, 0.1)
+#    MIN: Allowed minimum value of the entity
+#    MAX: Allowed maximum value of the entity
+#    VALUES: Valid selection values; dict[id,DisplayName] with optional component: "default":<defaultvalue>
+#    INC: 1, if entity provides continuously increasing values.
+#    SWITCH: Values for "off" and optionally for "on". If "on" is not specified, all other integer values are valid for "on"
+#    PF: Override display variant in HA. "PF":Platform.NUMBER v=> Temperature value is treated as NUMBER instead of CLIMATE.
 #
-#    *: Obligatorischer Wert
+#    *: Mandatory value
 # --------------------------------------------------------------------------------------------
 
-# Modbus-Register gemäß Zehnder_CSY_ComfoConnect-Pro_INM_DE-de.pdf vom 24.09.2024
-# Achtung: Register sind in der Dokumentation mit 1 beginnend nummeriert und es wird darauf verwiesen,
-# dass in der PDU Register mit Null beginnend adressiert werden (1-16 -> 0-15). Daher ist beim REG-Wert immer den Wert aus der Doku um eins reduzieren.
-# Getestet mit Zehnder ComfoConnect PRO  RCG 2.0.0.10
+# Modbus registers according to Zehnder_CSY_ComfoConnect-Pro_INM_EN-en.pdf from 24.09.2024
+# Attention: Registers are numbered starting from 1 in the documentation and it is pointed out,
+# that in the PDU, registers are addressed starting from zero (1-16 -> 0-15). Therefore, always reduce the value from the doc by one for the REG value.
+# Tested with Zehnder ComfoConnect PRO  RCG 2.0.0.10
 
 # --- ENTITIES_DICT ---
 ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
@@ -307,61 +307,61 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_CONNECTION_STATE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 0,
-        "NAME": "Verbindungsstatus",
+        "NAME": "Connection State",
         "VALUES": {
             0: "ok",
-            30: "die erkannte Lüftungseinheit ist kein CAQ",
-            40: "CAQ-Version nicht kompatibel",
-            50: "keine Lüftungseinheit erkannt",
+            30: "the detected ventilation unit is not a CAQ",
+            40: "CAQ version not compatible",
+            50: "no ventilation unit detected",
         },
         "DT": C_DT_UINT16,
     },
     C_ACTIVEERROR1: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 1,
-        "NAME": "Fehler 1",
+        "NAME": "Error 1",
         "VALUES": ERROR_DICT,
         "DT": C_DT_UINT16,
     },
     C_ACTIVEERROR2: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 2,
-        "NAME": "Fehler 2",
+        "NAME": "Error 2",
         "VALUES": ERROR_DICT,
         "DT": C_DT_UINT16,
     },
     C_ACTIVEERROR3: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 3,
-        "NAME": "Fehler 3",
+        "NAME": "Error 3",
         "VALUES": ERROR_DICT,
         "DT": C_DT_UINT16,
     },
     C_ACTIVEERROR4: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 4,
-        "NAME": "Fehler 4",
+        "NAME": "Error 4",
         "VALUES": ERROR_DICT,
         "DT": C_DT_UINT16,
     },
     C_ACTIVEERROR5: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 5,
-        "NAME": "Fehler 5",
+        "NAME": "Error 5",
         "VALUES": ERROR_DICT,
         "DT": C_DT_UINT16,
     },
     C_AIRFLOW: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 6,
-        "NAME": "Zuluft Ventilator-Volumen ",
+        "NAME": "Supply Air Fan Volume",
         "UNIT": "m³",
         "DT": C_DT_UINT16,
     },
     C_ROOM_TEMPERATURE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 7,
-        "NAME": "Raumlufttemperatur",
+        "NAME": "Room Air Temperature",
         "FAKTOR": 0.1,
         "UNIT": "°C",
         "DT": C_DT_INT16,
@@ -369,7 +369,7 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_EXTRACT_TEMPERATURE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 8,
-        "NAME": "Ablufttemperatur",
+        "NAME": "Extract Air Temperature",
         "FAKTOR": 0.1,
         "UNIT": "°C",
         "DT": C_DT_INT16,
@@ -377,7 +377,7 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_EXHAUST_TEMPERATURE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 9,
-        "NAME": "Fortlufttemperatur",
+        "NAME": "Exhaust Air Temperature",
         "FAKTOR": 0.1,
         "UNIT": "°C",
         "DT": C_DT_INT16,
@@ -385,7 +385,7 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_OUTDOOR_TEMPERATURE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 10,
-        "NAME": "Außenlufttemperatur",
+        "NAME": "Outdoor Air Temperature",
         "FAKTOR": 0.1,
         "UNIT": "°C",
         "DT": C_DT_INT16,
@@ -393,7 +393,7 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_SUPPLY_TEMPERATURE: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 11,
-        "NAME": "Zulufttemperatur",
+        "NAME": "Supply Air Temperature",
         "FAKTOR": 0.1,
         "UNIT": "°C",
         "DT": C_DT_INT16,
@@ -401,35 +401,35 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_ROOM_HUMIDITY: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 12,
-        "NAME": "Raumluftfeuchtigkeit",
+        "NAME": "Room Air Humidity",
         "UNIT": "%",
         "DT": C_DT_UINT16,
     },
     C_EXTRACT_HUMIDITY: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 13,
-        "NAME": "Abluftfeuchtigkeit",
+        "NAME": "Extract Air Humidity",
         "UNIT": "%",
         "DT": C_DT_UINT16,
     },
     C_EXHAUST_HUMIDITY: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 14,
-        "NAME": "Fortluftfeuchtigkeit",
+        "NAME": "Exhaust Air Humidity",
         "UNIT": "%",
         "DT": C_DT_UINT16,
     },
     C_OUTDOOR_HUMIDITY: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 15,
-        "NAME": "Außenluftfeuchtigkeit",
+        "NAME": "Outdoor Air Humidity",
         "UNIT": "%",
         "DT": C_DT_UINT16,
     },
     C_SUPPLY_HUMIDITY: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 16,
-        "NAME": "Zuluftfeuchtigkeit",
+        "NAME": "Supply Air Humidity",
         "UNIT": "%",
         "DT": C_DT_UINT16,
     },
@@ -492,94 +492,94 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
     C_FILTER_DAYS_REMAINING: {
         "RT": C_REG_TYPE_INPUT_REGISTERS,
         "REG": 25,
-        "NAME": "Filter ersetzen in",
+        "NAME": "Filter replacement in",
         "UNIT": "d",
         "DT": C_DT_UINT16,
     },
     # DISCRETE_INPUTS
-    C_ERROR_FLAG: {"RT": C_REG_TYPE_DISCRETE_INPUTS, "REG": 0, "NAME": "Fehler aktiv?"},
+    C_ERROR_FLAG: {"RT": C_REG_TYPE_DISCRETE_INPUTS, "REG": 0, "NAME": "Error active?"},
     C_STANDBY: {"RT": C_REG_TYPE_DISCRETE_INPUTS, "REG": 1, "NAME": "Standby"},
     C_COMFOHOOD: {"RT": C_REG_TYPE_DISCRETE_INPUTS, "REG": 2, "NAME": "ComfoHood"},
     C_FILTER_DIRTY: {
         "RT": C_REG_TYPE_DISCRETE_INPUTS,
         "REG": 3,
-        "NAME": "Filter wechseln",
+        "NAME": "Change filter",
     },
     # HOLDING_REGISTERS
     C_VENTILATION_PRESET: {
         "RT": C_REG_TYPE_HOLDING_REGISTERS,
         "REG": 0,
-        "NAME": "Lüftungsstufe",
+        "NAME": "Ventilation Level",
         "DT": C_DT_UINT16,  # byte -> in 16 Bit Register
         "VALUES": {
-            0: "Außer Haus",
-            1: "Voreinstellung 1",
-            2: "Voreinstellung 2",
-            3: "Voreinstellung 3",
+            0: "Away",
+            1: "Preset 1",
+            2: "Preset 2",
+            3: "Preset 3",
             "default": 2,
         },
     },
     C_TEMPERATURE_PROFILE: {
         "RT": C_REG_TYPE_HOLDING_REGISTERS,
         "REG": 1,
-        "NAME": "Temperaturprofil",
+        "NAME": "Temperature Profile",
         "DT": C_DT_UINT16,  # byte -> in 16 Bit Register
-        "VALUES": {0: "Komfort", 1: "Eco", 2: "Warm", "default": 0},
-        # Hinweis: funktioniert nur im Modus 0 oder 1
+        "VALUES": {0: "Comfort", 1: "Eco", 2: "Warm", "default": 0},
+        # Note: only works in mode 0 or 1
     },
     C_TEMPERATURE_PROFILE_MODE: {
         "RT": C_REG_TYPE_HOLDING_REGISTERS,
         "REG": 2,
-        "NAME": "Temperaturprofil Modus",
+        "NAME": "Temperature Profile Mode",
         "DT": C_DT_UINT16,  # byte -> in 16 Bit Register
-        "VALUES": {0: "Adaptiv", 1: "Fest", 2: "gemäß ext. Sollwert", "default": 0},
+        "VALUES": {0: "Adaptive", 1: "Fixed", 2: "according to ext. setpoint", "default": 0},
     },
     C_EXTERNAL_SETPOINT: {
         "RT": C_REG_TYPE_HOLDING_REGISTERS,
         "REG": 3,
-        "NAME": "Externer Sollwert",
+        "NAME": "External Setpoint",
         "FAKTOR": 0.1,
         "MIN": 5.0,
         "MAX": 35.0,
         "UNIT": "°C",
         "DT": C_DT_UINT16,
-        # Hinweis: funktioniert nur im Modus 2
+        # Note: only works in mode 2
     },
     C_BOOST_TIME: {
         "RT": C_REG_TYPE_HOLDING_REGISTERS,
         "REG": 4,
-        "NAME": "Boost-Zeit [min.]",
-        "FAKTOR": 0.016666666667,  # Sekunden: 1.0, im Register stehen Sekunden, Umrechnung in Minuten
+        "NAME": "Boost Time [min.]",
+        "FAKTOR": 0.016666666667,  # Seconds: 1.0, register contains seconds, conversion to minutes
         "UNIT": "min",
-        "STEP": 1,  # Sekunden: 60,
+        "STEP": 1,  # Seconds: 60,
         "MIN": 0,
-        "MAX": 1092,  # Sekunden: 65535,
+        "MAX": 1092,  # Seconds: 65535,
         "DT": C_DT_UINT16,
-        # Hinweis: 65535 (18h12m15s)wird als 24 Stunden betrachtet
+        # Note: 65535 (18h12m15s) is considered as 24 hours
     },
     # COILS
     C_RESET_ERRORS: {
         "RT": C_REG_TYPE_COILS,
         "REG": 0,
-        "NAME": "Fehler quittieren",
-        # selbstrücksetzende Coil, der Wert False wird ignoriert
+        "NAME": "Acknowledge Errors",
+        # self-resetting coil, the value False is ignored
     },
-    # # Wird schon über C_VENTILATION_PRESET gesetzt
+    # # Is already set via C_VENTILATION_PRESET
     # C_VENTILATION_PRESET_AWAY: {
     #     "RT": C_REG_TYPE_COILS, "REG": 1, "NAME": "Ventilation Preset Away"
-    #     # der Wert False wird ignoriert
+    #     # the value False is ignored
     # },
     # C_VENTILATIONPRESET1: {
     #     "RT": C_REG_TYPE_COILS, "REG": 2, "NAME": "VentilationPreset1"
-    #     # der Wert False wird ignoriert
+    #     # the value False is ignored
     # },
     # C_VENTILATIONPRESET2: {
     #     "RT": C_REG_TYPE_COILS, "REG": 3, "NAME": "VentilationPreset2"
-    #     # der Wert False wird ignoriert
+    #     # the value False is ignored
     # },
     # C_VENTILATIONPRESET3: {
     #    "RT": C_REG_TYPE_COILS, "REG": 4, "NAME": "VentilationPreset3"
-    #    # der Wert False wird ignoriert
+    #    # the value False is ignored
     # },
     C_AUTO_MODE: {"RT": C_REG_TYPE_COILS, "REG": 5, "NAME": "Auto Mode"},
     C_BOOST: {"RT": C_REG_TYPE_COILS, "REG": 6, "NAME": "Boost"},
@@ -589,7 +589,7 @@ ENTITIES_DICT: Dict[str, Dict[str, Any]] = {
 
 
 # ------------------------------------------------------------
-# Klassendefinitionen für die unterschiedlichen Entitätstypen
+# Class definitions for the different entity types
 # ------------------------------------------------------------
 
 
@@ -607,7 +607,7 @@ class MySensorEntityDescription(SensorEntityDescription):
 class MyBinaryEntityDescription(BinarySensorEntityDescription):
     """A class that describes Modbus binary entities."""
 
-    # Hinweis: Falls echte Schalter-Entities verwendet werden, ggf. SwitchEntityDescription verwenden.
+    # Note: If real switch entities are used, use SwitchEntityDescription if necessary.
 
 
 @dataclass
@@ -649,20 +649,20 @@ BINARY_TYPES: dict[str, MyBinaryEntityDescription] = {}
 
 
 # --------------------------------------------------------------------
-# Hilfsfunktionen zur Klassifizierung der Eintitäten aus ENTITIES_DICT
+# Helper functions for classifying the entities from ENTITIES_DICT
 # --------------------------------------------------------------------
 
 TEMP_UNITS = {"°C", "K"}
 
 
 def is_entity_readonly(props: Dict[str, Any]) -> bool:
-    """Input-Register oder Discrete-Inputs oder Read-Only: RW=0)"""
+    """Input registers or discrete inputs or Read-Only: RW=0)"""
     reg_type = get_entity_type(props)
     return reg_type in [C_REG_TYPE_INPUT_REGISTERS, C_REG_TYPE_DISCRETE_INPUTS] or (props.get("RW") == 0)
 
 
 def is_entity_readwrite(props: Dict[str, Any]) -> bool:
-    """Beschreibbar, Read-Only: Beschreibbar (WR=None)"""
+    """Writable, Read-Only: Writable (WR=None)"""
     reg_type = get_entity_type(props)
     return reg_type in [C_REG_TYPE_HOLDING_REGISTERS, C_REG_TYPE_COILS]
 
@@ -692,7 +692,7 @@ def is_entity_number(props: Dict[str, Any]) -> bool:
 
 
 # -------------------------------------------------
-# Hilfsfunktionen zum Lesen der Daten einer Entität
+# Helper functions for reading the data of an entity
 # -------------------------------------------------
 
 
@@ -767,7 +767,7 @@ def get_entity_factor(props: Dict[str, Any]) -> float:
 
 
 # --------------------------------------------------------------------------------
-# Hilfsfunktionen zur Erstellen der aus ENTITIES_DICT abgeleiteten Datenstrukturen
+# Helper functions for creating the data structures derived from ENTITIES_DICT
 # --------------------------------------------------------------------------------
 
 
@@ -808,26 +808,26 @@ def _classify_register(props: Dict[str, Any]) -> int | None:
 
     if is_entity_readonly(props):
         if is_entity_switch(props):
-            """Nicht beschreibbar, Schalter (SWITCH!=None)."""
+            """Not writable, switch (SWITCH!=None)."""
             return MyBinarySensorEntityDescription  # C_REGISTERCLASS_BINARY_SENSOR
         elif is_entity_select(props):
-            """Nicht beschreibbar, Auswahl (VALUES enthält mindestens ein Element)."""
+            """Not writable, selection (VALUES contains at least one element)."""
             return MySensorEntityDescription  # C_REGISTERCLASS_SELECT_ENTITY
         else:
-            """Nicht beschreibbar, kein Schalter (SWITCH=None)."""
+            """Not writable, no switch (SWITCH=None)."""
             return MySensorEntityDescription  # C_REGISTERCLASS_SENSOR
     else:
         if is_entity_switch(props):
-            """Beschreibbar, Schalter (SWITCH!=None)."""
+            """Writable, switch (SWITCH!=None)."""
             return MyBinaryEntityDescription  # C_REGISTERCLASS_BINARY_ENTITY
         elif is_entity_select(props):
-            """Beschreibbar, Auswahl (VALUES enthält mindestens ein Element)."""
+            """Writable, selection (VALUES contains at least one element)."""
             return MySelectEntityDescription  # C_REGISTERCLASS_SELECT_ENTITY
         elif is_entity_climate(props):
-            """Beschreibbar, Nur Temperatureinheiten (°C oder K) zulassen"""
+            """Writable, only allow temperature units (°C or K)"""
             return MyClimateEntityDescription  # C_REGISTERCLASS_CLIMATE_ENTITY
         else:
-            """Beschreibbar, kein Schalter (SWITCH=None), keine Auswahl (VALUES ist None), Einheit optional, aber nicht °C oder K."""
+            """Writable, no switch (SWITCH=None), no selection (VALUES is None), unit optional, but not °C or K."""
             return MyNumberEntityDescription  # C_REGISTERCLASS_NUMBER_ENTITY
 
 
@@ -835,14 +835,14 @@ def _unit_mapping(
     unit: Optional[str],
 ) -> tuple[Optional[str], Optional[SensorDeviceClass], Optional[SensorStateClass]]:
     """
-    Mappt unsere Einheit (UNIT) auf Home-Assistant native_unit_of_measurement + device_class + state_class.
-    Für unbekannte Einheiten bleiben Klassen leer.
+    Maps our unit (UNIT) to Home Assistant native_unit_of_measurement + device_class + state_class.
+    For unknown units, classes remain empty.
     """
     if unit is None:
         return None, None, None
 
     u = unit.strip()
-    # Temperatur
+    # Temperature
     if u == "°C":
         return (
             UnitOfTemperature.CELSIUS,
@@ -850,14 +850,14 @@ def _unit_mapping(
             SensorStateClass.MEASUREMENT,
         )
     if u == "K":
-        # Selten als absolute Temperatur; hier i. d. R. Offsets -> als °C nicht sinnvoll.
+        # Rarely as absolute temperature; here usually offsets -> not meaningful as °C.
         return (
             UnitOfTemperature.KELVIN,
             SensorDeviceClass.TEMPERATURE,
             SensorStateClass.MEASUREMENT,
         )
 
-    # Druck
+    # Pressure
     if u.lower() in {"bar"}:
         return (
             UnitOfPressure.BAR,
@@ -865,8 +865,8 @@ def _unit_mapping(
             SensorStateClass.MEASUREMENT,
         )
 
-    # Energie & Leistung
-    if u.lower() in {"kwh", "kW/h".lower()}:  # akzeptiere beide Schreibweisen
+    # Energy & Power
+    if u.lower() in {"kwh", "kW/h".lower()}:  # accept both spellings
         return (
             UnitOfEnergy.KILO_WATT_HOUR,
             SensorDeviceClass.ENERGY,
@@ -881,23 +881,23 @@ def _unit_mapping(
             SensorStateClass.MEASUREMENT,
         )
 
-    # Volumenstrom
+    # Volume flow
     if u.lower() in {"l/min", "l/Min", "l pro min"}:
         return "l/min", None, SensorStateClass.MEASUREMENT
     if u.lower() in {"m³/h"}:
         return "m³/h", None, SensorStateClass.MEASUREMENT
 
-    # Drehzahl / Stellgrad
+    # Speed / Control level
     if u == "‰":
         return "‰", None, SensorStateClass.MEASUREMENT
     if u == "%":
         return "%", None, SensorStateClass.MEASUREMENT
 
-    # PPM, Anteil
+    # PPM, Proportion
     if u == "ppm":
         return "ppm", None, SensorStateClass.MEASUREMENT
 
-    # Zeit/Dauer
+    # Time/Duration
     if u.lower() in {"h", "std"}:
         return "h", SensorDeviceClass.DURATION, SensorStateClass.TOTAL_INCREASING
     if u.lower() in {"min"}:
@@ -905,11 +905,11 @@ def _unit_mapping(
     if u.lower() in {"s", "sek", "sec"}:
         return "s", SensorDeviceClass.DURATION, SensorStateClass.MEASUREMENT
 
-    # Restdauer
+    # Remaining duration
     if u.lower() in {"d", "days"}:
         return "d", SensorDeviceClass.DURATION, SensorStateClass.MEASUREMENT
 
-    # Fallback: nutze Roh-Einheit ohne Device-Class
+    # Fallback: use raw unit without device class
     return u, None, SensorStateClass.MEASUREMENT
 
 
@@ -946,7 +946,7 @@ def init():
         match registerclass:
             case thismodule.MySensorEntityDescription:
                 unit, device_class, state_class = _unit_mapping(get_entity_unit(props))
-                _LOGGER.debug(f"Sensor {entity_key}: {name}, Einheit {unit}")
+                _LOGGER.debug(f"Sensor {entity_key}: {name}, Unit {unit}")
                 SENSOR_TYPES[entity_key] = registerclass(
                     name=name,
                     key=entity_key,
@@ -956,7 +956,7 @@ def init():
                 )
 
             case thismodule.MyBinarySensorEntityDescription:
-                _LOGGER.debug(f"Binär-Sensor {entity_key}: {name}")
+                _LOGGER.debug(f"Binary Sensor {entity_key}: {name}")
                 BINARYSENSOR_TYPES[entity_key] = registerclass(
                     name=name,
                     key=entity_key,
@@ -970,7 +970,7 @@ def init():
                 hvac_modes = get_entity_hvac_modes(props)
                 temperature_unit = get_entity_unit(props)
                 _LOGGER.debug(
-                    f"Temperatur-Stellwert {entity_key}: {name}, {min_value}-{max_value}{temperature_unit} in {step}-er Schritten"
+                    f"Temperature Setpoint {entity_key}: {name}, {min_value}-{max_value}{temperature_unit} in {step} steps"
                 )
                 CLIMATE_TYPES[entity_key] = registerclass(
                     name=name,
@@ -992,7 +992,7 @@ def init():
                 step = get_entity_step(props)
                 unit_of_measurement = get_entity_unit(props)
                 _LOGGER.debug(
-                    f"Numerischer Stellwert {entity_key}: {name}, {min_value}-{max_value}{unit_of_measurement} in {step}-er Schritten"
+                    f"Numerical Setpoint {entity_key}: {name}, {min_value}-{max_value}{unit_of_measurement} in {step} steps"
                 )
                 NUMBER_TYPES[entity_key] = registerclass(
                     name=name,
@@ -1007,7 +1007,7 @@ def init():
 
             case thismodule.MyBinaryEntityDescription:
                 # key = f"{C_PREFIX_SWITCH}_{entity_key}"
-                _LOGGER.debug(f"Schalter {entity_key}: {name}")
+                _LOGGER.debug(f"Switch {entity_key}: {name}")
                 BINARY_TYPES[entity_key] = registerclass(
                     name=name,
                     key=entity_key,
@@ -1017,7 +1017,7 @@ def init():
                 # key = f"{C_PREFIX_SELECT}_{entity_key}"
                 values, default = get_entity_select_values_and_default(props)
                 _LOGGER.debug(
-                    f"Auswahl-Entität {entity_key}: {name}, Werte-Bereich: {values}, Default: {default}"
+                    f"Select Entity {entity_key}: {name}, Value range: {values}, Default: {default}"
                 )
                 SELECT_TYPES[entity_key] = registerclass(
                     name=name,
@@ -1027,26 +1027,26 @@ def init():
                 )
 
             case _:
-                _LOGGER.warning(f"Unbekannter Entitätstyp {entity_key}: {props}")
-                print(f"Sensor konnte nicht zugeordnet werden: {entity_key}/{name}")
+                _LOGGER.warning(f"Unknown entity type {entity_key}: {props}")
+                print(f"Sensor could not be assigned: {entity_key}/{name}")
 
     _initialized = True
     _LOGGER.debug(
-        f"Status-Register (r/o) von {C_MIN_INPUT_REGISTER} bis {C_MAX_INPUT_REGISTER}"
+        f"Status registers (r/o) from {C_MIN_INPUT_REGISTER} to {C_MAX_INPUT_REGISTER}"
     )
     _LOGGER.debug(
-        f"Discrete Inputs-Register (r/o) von {C_MIN_DISCRETE_INPUTS} bis {C_MAX_DISCRETE_INPUTS}"
+        f"Discrete inputs registers (r/o) from {C_MIN_DISCRETE_INPUTS} to {C_MAX_DISCRETE_INPUTS}"
     )
-    _LOGGER.debug(f"- {len(SENSOR_TYPES)} Sensoren")
-    _LOGGER.debug(f"- {len(BINARYSENSOR_TYPES)} Binär-Sensoren")
+    _LOGGER.debug(f"- {len(SENSOR_TYPES)} Sensors")
+    _LOGGER.debug(f"- {len(BINARYSENSOR_TYPES)} Binary Sensors")
     _LOGGER.debug(
-        f"Holding-Register (r/w) von {C_MIN_HOLDING_REGISTER} bis {C_MAX_HOLDING_REGISTER}"
+        f"Holding registers (r/w) from {C_MIN_HOLDING_REGISTER} to {C_MAX_HOLDING_REGISTER}"
     )
-    _LOGGER.debug(f"Coils (r/w) von {C_MIN_COILS} bis {C_MAX_COILS}")
-    _LOGGER.debug(f"- {len(SELECT_TYPES)} Auswahl-Entitäten")
-    _LOGGER.debug(f"- {len(BINARY_TYPES)} Schalter")
-    _LOGGER.debug(f"- {len(CLIMATE_TYPES)} Temperatur-Stellwerte")
-    _LOGGER.debug(f"- {len(NUMBER_TYPES)} Numerische Stellwerte")
+    _LOGGER.debug(f"Coils (r/w) from {C_MIN_COILS} to {C_MAX_COILS}")
+    _LOGGER.debug(f"- {len(SELECT_TYPES)} Select Entities")
+    _LOGGER.debug(f"- {len(BINARY_TYPES)} Switches")
+    _LOGGER.debug(f"- {len(CLIMATE_TYPES)} Temperature Setpoints")
+    _LOGGER.debug(f"- {len(NUMBER_TYPES)} Numerical Setpoints")
     _LOGGER.info(
         "****************************************  initalized ****************************************"
     )
